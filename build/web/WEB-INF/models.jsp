@@ -47,12 +47,12 @@
                         <div class="col-sm-9">
                             <select class="form-control " id="_model" name="operation">
                                 <%--
-                                <c:forEach var="operation" items="operations">
-                                    <c:if test="${operation.id eq selectedOperation.id}">
-                                        <option selected="true" value="${operation.id}">${operation.operationName}</option> 
+                                <c:forEach var="part" items="parts">
+                                    <c:if test="${part.id eq selectedPart.id}">
+                                        <option selected="true" value="${part.id}">${part.name}</option> 
                                     </c:if>
-                                    <c:if test="${operation.id ne selectedOperationl.id}">
-                                        <option value="${operation.id}">${operation.operationName}</option>
+                                    <c:if test="${part.id ne selectedPart.id}">
+                                        <option value="${part.id}">${part.name}</option>
                                     </c:if>
                                 </c:forEach>
                                 --%>
@@ -74,7 +74,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Номер операции: </th>
+                        <th>Название части: </th>
                         <th>Стоимость операции: </th>
                         <th>Время выполнения: </th>
                         <th>Описание: </th>
@@ -86,10 +86,10 @@
                     <c:forEach var="operation" items="${operations}">
                     --%>
                     <tr>
-                        <td>${operation.operationName}</td>
-                        <td>${operation.operationCost}</td>
-                        <td>${operation.operationTime}</td>
-                        <td>${operation.operationDesription}</td>
+                        <td>${part.name}</td>
+                        <td>${part.price}</td>
+                        <td></td>
+                        <td></td>
                         <td>            
                             <a href="#" role="button" data-keyboard="false" class="btn btn-primary btn-sm" data-backdrop="static" data-toggle="modal" data-target="#operationEdit" data-remote="">
                                 <span class="glyphicon glyphicon-edit" title="Изменить" ></span></a>
@@ -134,13 +134,8 @@
                         <h4 class="modal-title">Новая операция: </h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <label for="comment">Название операции: </label>
-                                <input type="text" class="form-control" id="_name">
-                            </div>
-                        </div>
-
+                        <label for="comment">Название операции: </label>
+                        <input type="text" class="form-control" id="_name">
                         <br>
 
                         <label for="comment">Описание: </label>
@@ -177,12 +172,8 @@
                         <h4 class="modal-title">Изменить операцию: </h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <label for="comment">Название операции: </label>
-                                <input type="text" class="form-control" id="_name">
-                            </div>
-                        </div>
+                        <label for="comment">Название операции: </label>
+                        <input type="text" class="form-control" id="_name">
 
                         <br>
 

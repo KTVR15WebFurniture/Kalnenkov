@@ -28,15 +28,14 @@ public class ModelController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
         String userPath = request.getServletPath();
-        if("/models".equals(userPath)){
-            String newModel=request.getParameter("newmodel");
-            if(newModel != null){
+        if ("/models".equals(userPath)) {
+            String newModel = request.getParameter("newmodel");
+            if (newModel != null) {
                 //создaть запись в таблицу с названиями моделей
             }
             //List<Model> models = modelFacade.findAll();
